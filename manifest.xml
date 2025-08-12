@@ -5,36 +5,32 @@
   xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
   xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
   xsi:type="MailApp">
-  
+
   <Id>f9a12345-6789-4abc-a123-4567abcdef12</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Student Add-in</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Send Confirmation Popup"/>
-  <Description DefaultValue="Shows a popup before sending an email to confirm correct sensitivity label."/>
-  <IconUrl DefaultValue="https://via.placeholder.com/64"/>
-  <HighResolutionIconUrl DefaultValue="https://via.placeholder.com/128"/>
-  <SupportUrl DefaultValue="https://example.com"/>
+  <DisplayName DefaultValue="Send Confirmation Popup" />
+  <Description DefaultValue="Shows a popup before sending an email to confirm correct sensitivity label." />
+  <IconUrl DefaultValue="https://via.placeholder.com/64" />
+  <HighResolutionIconUrl DefaultValue="https://via.placeholder.com/128" />
+  <SupportUrl DefaultValue="https://example.com" />
 
   <Hosts>
-    <Host Name="Mailbox"/>
+    <Host Name="Mailbox" />
   </Hosts>
 
   <Requirements>
     <Sets DefaultMinVersion="1.8">
-      <Set Name="Mailbox"/>
+      <Set Name="Mailbox" />
     </Sets>
   </Requirements>
 
   <Permissions>ReadWriteItem</Permissions>
 
-  <Rule xsi:type="RuleCollection" Mode="Or">
-    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
-  </Rule>
-
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
 
-  <!-- Removed FormSettings for ItemSend to avoid schema errors -->
+  <!-- Removed FormSettings to avoid schema errors -->
 
   <VersionOverrides
     xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
@@ -42,24 +38,26 @@
 
     <Requirements>
       <bt:Sets DefaultMinVersion="1.8">
-        <bt:Set Name="Mailbox"/>
+        <bt:Set Name="Mailbox" />
       </bt:Sets>
     </Requirements>
 
     <Hosts>
       <Host xsi:type="Mailbox">
         <LaunchEvents>
-          <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler"/>
+          <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" />
         </LaunchEvents>
-        <FunctionFile resid="Taskpane.Url"/>
+        <FunctionFile resid="Taskpane.Url" />
       </Host>
     </Hosts>
 
     <Resources>
       <bt:Urls>
-        <bt:Url id="Taskpane.Url" DefaultValue="http://myaddinproject.github.io/outlookpopupaddin/taskpane.js"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="http://myaddinproject.github.io/outlookpopupaddin/taskpane.js" />
       </bt:Urls>
     </Resources>
   </VersionOverrides>
 
 </OfficeApp>
+
+
