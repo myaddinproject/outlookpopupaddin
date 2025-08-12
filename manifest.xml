@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
-           xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
-           xsi:type="MailApp">
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+  xsi:type="MailApp">
+  
   <Id>f9a12345-6789-4abc-a123-4567abcdef12</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Student Add-in</ProviderName>
@@ -19,18 +21,10 @@
   </Hosts>
 
   <Requirements>
-    <Sets DefaultMinVersion="1.13">
+    <Sets DefaultMinVersion="1.8">
       <Set Name="Mailbox"/>
     </Sets>
   </Requirements>
-
-  <FormSettings>
-    <Form xsi:type="ItemSend">
-      <DesktopSettings>
-        <SourceLocation DefaultValue="http://myaddinproject.github.io/outlookpopupaddin/popup.html"/>
-      </DesktopSettings>
-    </Form>
-  </FormSettings>
 
   <Permissions>ReadWriteItem</Permissions>
 
@@ -40,9 +34,14 @@
 
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
 
-  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="VersionOverridesV1_1">
+  <!-- Removed FormSettings for ItemSend to avoid schema errors -->
+
+  <VersionOverrides
+    xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+    xsi:type="VersionOverridesV1_1">
+
     <Requirements>
-      <bt:Sets DefaultMinVersion="1.13">
+      <bt:Sets DefaultMinVersion="1.8">
         <bt:Set Name="Mailbox"/>
       </bt:Sets>
     </Requirements>
@@ -62,4 +61,5 @@
       </bt:Urls>
     </Resources>
   </VersionOverrides>
+
 </OfficeApp>
