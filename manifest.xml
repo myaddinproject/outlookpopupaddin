@@ -27,7 +27,7 @@
   <FormSettings>
     <Form xsi:type="ItemSend">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://localhost:3000/popup.html"/>
+        <SourceLocation DefaultValue="http://myaddinproject.github.io/outlookpopupaddin/popup.html"/>
       </DesktopSettings>
     </Form>
   </FormSettings>
@@ -58,7 +58,7 @@
 
     <Resources>
       <bt:Urls>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.js"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="http://myaddinproject.github.io/outlookpopupaddin/taskpane.js"/>
       </bt:Urls>
     </Resources>
   </VersionOverrides>
